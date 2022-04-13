@@ -1,0 +1,21 @@
+{% extends '_base.html' %}
+{% load static %}
+
+
+
+{% block main %}
+
+    <div class="add-news">
+        <div class="card m-4">
+            <div class="card-body">
+                <h1>Add new news</h1><br>
+                <form method="POST" class="">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="save btn btn-outline-success">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

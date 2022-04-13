@@ -1,6 +1,6 @@
 from django import forms
 
-from home.models import News
+from news.models import News
 
 
 class NewsForm(forms.ModelForm):

@@ -13,8 +13,8 @@
                     <div class="card-body">
                         <h4 class="card-title"><p>{{ news.title }}</p></h4>
                         <p  class="card-text">{{ news.body|truncatewords:40 }}</p>
-                        <p>Опубликовано: {{ news.publish|date:"d.m.Y H:i" }}</p>
-                        <a href="{% url 'news_detail' news.pk %}" class="btn btn-lg btn-outline-success">Подробнее</a>
+                        <p style="font-style: italic;">Опубликовано: {{ news.publish|date:"d.m.Y H:i" }}</p>
+                        <a href="{% url 'detail_news' news.pk %}" class="btn btn-lg btn-outline-success">Подробнее</a>
                     </div>
                 </div>
             {% endfor %}
@@ -27,7 +27,7 @@
 
 
     {% block pagination %}
-        {% include 'home/pagination.html'  with page=page_obj %}
+        {% include 'news/pagination.html'  with page=page_obj %}
     {% endblock %}
 
 {%endblock %}

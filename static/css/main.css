@@ -24,7 +24,7 @@ body {
 }
 
 .content {
-  display: flex;
+  /*display: flex;*/
   flex: 1 0 auto;
   justify-content: space-between;
   width: 100%;
@@ -44,6 +44,14 @@ body {
 
 .main-wrap {
     display: flex;
+}
+
+.main-list {
+    width: 76%;
+}
+
+.add-news {
+    max-width: 524px;
 }
 
 .footer {
