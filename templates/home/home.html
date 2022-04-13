@@ -1,0 +1,33 @@
+{% extends '_base.html' %}
+{% load static %}
+
+
+
+
+{% block main %}
+
+    <div class="main-wrap">
+        <div class="main-list">
+            {% for news in object_list %}
+                <div class="card m-4">
+                    <div class="card-body">
+                        <h4 class="card-title"><p>{{ news.title }}</p></h4>
+                        <p  class="card-text">{{ news.body|truncatewords:40 }}</p>
+                        <p>Опубликовано: {{ news.publish|date:"d.m.Y H:i" }}</p>
+                        <a href="{% url 'news_detail' news.pk %}" class="btn btn-lg btn-outline-success">Подробнее</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="main-btn">
+            <a href="{% url 'add_news' %}" class="btn btn-lg btn-outline-success">Добавить новости</a>
+        </div>
+    </div>
+
+
+    {% block pagination %}
+        {% include 'home/pagination.html'  with page=page_obj %}
+    {% endblock %}
+
+{%endblock %}
