@@ -17,7 +17,10 @@ class News(models.Model):
         ordering = ('-publish',)
 
     def get_absolute_url(self):
-        return reverse('news_detail', args=[str(self.id)])
+        return reverse('news_detail',
+                       args=[
+                           str(self.id)
+                       ])
 
     def __str__(self):
             return self.title
