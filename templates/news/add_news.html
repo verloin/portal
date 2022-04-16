@@ -1,4 +1,5 @@
 {% extends '_base.html' %}
+{% load crispy_forms_filters %}
 {% load static %}
 
 
@@ -8,11 +9,11 @@
     <div class="add-news">
         <div class="card m-4">
             <div class="card-body">
-                <h1>Add new news</h1><br>
+                <h3 class="card-title">Add new news</h3><br>
                 <form method="POST" class="">
                     {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" class="save btn btn-outline-success">Save</button>
+                    {{ form|crispy }}
+                    <button type="submit" class="save btn btn-lg btn-outline-success">Save</button>
                 </form>
             </div>
         </div>

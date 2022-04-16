@@ -1,7 +1,7 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, redirect
 from django.utils import timezone
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from news.forms import NewsForm
 from news.models import News
@@ -17,6 +17,12 @@ class NewsListView(ListView):
 class NewsDetailView(DetailView):
     model = News
     template_name = 'news/detail_news.html'
+
+
+class NewsUpdateView(UpdateView):
+    model = News
+    template_name = 'news/edit_news.html'
+    fields = ['title', 'body']
 
 
 class NewsCreateView(CreateView):
@@ -43,21 +49,3 @@ def news_list(request):
                       'news': news
                   })
 
-
-# def add_news(request):
-#     if request.method == "POST":
-#         form = NewsForm(request.POST)
-#
-#         if form.is_valid():
-#             news = form.save(commit=False)
-#             news.author = request.user
-#             news.publish = timezone.now()
-#             news.save()
-#
-#             return redirect('news_detail', pk=news.pk)
-#     else:
-#         form = NewsForm()
-#     return render(request,
-#                   'news/add_news.html', {
-#                       'form': form
-#                   })

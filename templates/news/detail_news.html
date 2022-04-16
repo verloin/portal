@@ -13,7 +13,7 @@
                         <h4 class="card-title"><p>{{ news.title }}</p></h4>
                         <p style="font-style: italic;">Опубликовано: {{ news.publish|date:"d.m.Y H:i" }}</p>
                         <p  class="card-text">{{ news.body }}</p>
-                        <a href="#" class="btn float-sm-right btn-outline-success">Редактировать</a>
+                        <a href="{% url 'news:edit_news' news.pk %}" class="btn float-sm-right btn-outline-success">Редактировать</a>
                     </div>
                 </div>
             </div>

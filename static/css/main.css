@@ -85,3 +85,18 @@ body {
 .pagination {
     margin: 0 0 0 25px;
 }
+
+.container-login {
+    margin: 6% auto;
+    width: 500px;
+}
+
+.btn-login-registration {
+    display: flex;
+    justify-content: space-around;
+}
+
+.add-news {
+    margin: 1% auto;
+    width: 500px;
+}

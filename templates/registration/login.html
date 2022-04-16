@@ -1,0 +1,33 @@
+{% extends  '_base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+
+    <div class="container-login">
+        <div class="card ">
+            <div class="card-body">
+                <h4 class="card-title">Log in to your account</h4>
+                <br>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}">
+                    {{ form|crispy }}
+                    <div class="btn-login-registration mt-4" >
+                        <div class="log-in">
+                            <button type="submit" class="btn btn-lg btn-outline-success">Log in</button>
+                        </div>
+                        <div class="log-in-or">
+                            <p>or</p>
+                        </div>
+                        <div class="log-in-btn">
+                            <a href="{% url 'accounts:signup' %}" class="btn btn-lg btn-outline-success">Registration</a>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
