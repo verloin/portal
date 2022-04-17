@@ -7,7 +7,7 @@
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0 mr-4" type="submit">Search</button>
         {% if user.is_authenticated %}
-            <button class="btn btn-outline-success my-2 my-sm-0 mr-4" type="submit">{{ user.username }}.!</button>
+{#            <button class="btn btn-outline-success my-2 my-sm-0 mr-4" type="submit">{{ user.username }}.!</button>#}
             <a href="{% url 'accounts:logout' %}" class="btn btn-outline-success my-2 my-sm-0 mr-4">Log out</a>
         {% else %}
             <a href="{% url 'accounts:login' %}" class="btn btn-outline-success my-2 my-sm-0 mr-4">Login</a>

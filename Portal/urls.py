@@ -8,5 +8,4 @@ urlpatterns = [
     path('news/', include('news.urls')),
     path('accounts/', include('accounts.urls')),
     path('', include('news.urls')), # нужно сменить на домашнюю страницу
-
 ]

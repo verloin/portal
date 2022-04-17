@@ -16,7 +16,6 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-
 }
 
 .header {
@@ -24,7 +23,6 @@ body {
 }
 
 .content {
-  /*display: flex;*/
   flex: 1 0 auto;
   justify-content: space-between;
   width: 100%;
@@ -51,7 +49,8 @@ body {
 }
 
 .add-news {
-    max-width: 524px;
+    margin: 1% auto;
+    width: 70%;
 }
 
 .footer {
@@ -96,7 +95,3 @@ body {
     justify-content: space-around;
 }
 
-.add-news {
-    margin: 1% auto;
-    width: 500px;
-}

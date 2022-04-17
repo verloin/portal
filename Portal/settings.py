@@ -41,8 +41,9 @@ INSTALLED_APPS = [
     'django_extensions',
     'crispy_forms',
 
-    'news.apps.HomeConfig',
+    'news',
     'accounts',
+
 ]
 
 MIDDLEWARE = [

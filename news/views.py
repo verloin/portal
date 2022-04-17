@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, redirect
 from django.utils import timezone
@@ -14,18 +15,18 @@ class NewsListView(ListView):
     template_name = 'news/news.html'
 
 
-class NewsDetailView(DetailView):
+class NewsDetailView(LoginRequiredMixin, DetailView):
     model = News
     template_name = 'news/detail_news.html'
 
 
-class NewsUpdateView(UpdateView):
+class NewsUpdateView(LoginRequiredMixin, UpdateView):
     model = News
     template_name = 'news/edit_news.html'
     fields = ['title', 'body']
 
 
-class NewsCreateView(CreateView):
+class NewsCreateView(LoginRequiredMixin, CreateView):
     model = News
     template_name = 'news/add_news.html'
     fields = ['title', 'author', 'body']
