@@ -1,16 +1,17 @@
 {% load static %}
 
-
-
     <ul class="navbar-nav mr-auto navbar-dark bg-dark h-100">
       <li class="nav-item" style="margin-top: 74px;">
-        <a class="nav-link" href="{% url 'news:news' %}">Home</a>
+        <a class="nav-link" href="{% url 'index' %}">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Task manager</a>
+        <a class="nav-link" href="{% url 'news:news' %}">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Calendar</a>
+        <a class="nav-link" href="{% url 'todolist:TodoList' %}">Todolist</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">TaskManager</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Item</a>
@@ -24,11 +25,25 @@
       <li class="nav-item">
         <a class="nav-link" href="#">About</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item mt-4">
           {% if user.is_authenticated %}
-              <a href="{% url 'accounts:users-profile' %}" class="nav-link">Profile</a>
+              <a href="{% url 'accounts:users-profile' %}" class="nav-link">Profile: {{user.username}}</a>
+              <br>
+              <div class="">
+                  <img class="rounded-circle account-img" src="{{ user.profile.avatar.url }} " style="cursor: pointer;width: 100px;height: 100px;" alt=""/>
+              </div>
           {% endif %}
       </li>
+        {% if user.is_authenticated %}
+            <li class="nav-item mt-4">
+                <a href="{% url 'accounts:logout' %}" class="btn btn-outline-success my-2 my-sm-0">Log out</a>
+            </li>
+        {% else %}
+            <li class="nav-item mt-4">
+                <a href="{% url 'accounts:login' %}" class="btn btn-outline-success my-2 my-sm-0">Login</a>
+            </li>
+        {% endif %}
+
     </ul>
 
 

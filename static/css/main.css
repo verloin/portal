@@ -13,6 +13,8 @@ body {
   padding: 0;
 }
 
+::-webkit-scrollbar { width: 0;}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -30,7 +32,7 @@ body {
 }
 
 .sidebar {
-  width: 15%;
+  width: 10%;
   text-align: center;
   position: fixed;
   height: 900px;
@@ -60,7 +62,6 @@ body {
     font-size: 14px;
 }
 
-
 .sidebar .nav-item .nav-link {
     color: white;
     font-size: 20px;
@@ -68,7 +69,7 @@ body {
 
 .sidebar .nav-item .nav-link:hover {
     color: #28a745;
-    font-size: 28px;
+    /*font-size: 28px;*/
 }
 
 .main-btn {
@@ -95,3 +96,17 @@ body {
     justify-content: space-around;
 }
 
+.truncate-text {
+  width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.truncate-text p {
+    margin-bottom:  0;
+}
+
+.calendar_content.today:after {
+    color: #28a745;!important;
+}

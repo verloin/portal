@@ -13,5 +13,4 @@ urlpatterns = [
     path('signup/', SignUpView.as_view(), name='signup'),
     path('profile/', profile, name='users-profile'),
     path('password-change/', ChangePasswordView.as_view(), name='password_change'),
-
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]

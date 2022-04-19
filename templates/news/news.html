@@ -11,7 +11,7 @@
             {% for news in object_list %}
                 <div class="card m-4">
                     <div class="card-body">
-                        <h4 class="card-title"><p>{{ news.title }}</p></h4>
+                        <h4 class=""><p>{{ news.title }}</p></h4>
                         <p  class="card-text">{{ news.body|truncatewords:40 }}</p>
                         <p style="font-style: italic;">Опубликовано: {{ news.publish|date:"d.m.Y H:i" }}</p>
                         <a href="{% url 'news:detail_news' news.pk %}" class="btn btn-lg btn-outline-success">Подробнее</a>
@@ -22,7 +22,10 @@
 
         <div class="main-btn">
             <a href="{% url 'news:add_news' %}" class="btn btn-lg btn-outline-success">Добавить новости</a>
+
+
         </div>
+
     </div>
 
 
