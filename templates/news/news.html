@@ -13,7 +13,12 @@
                     <div class="card-body">
                         <h4 class=""><p>{{ news.title }}</p></h4>
                         <p  class="card-text">{{ news.body|truncatewords:40 }}</p>
-                        <p style="font-style: italic;">Опубликовано: {{ news.publish|date:"d.m.Y H:i" }}</p>
+                        <p style="font-style: italic;margin-bottom: 0;">Опубликовано: {{ news.publish|date:"d.m.Y H:i" }}</p>
+                        <p style="font-style: italic;">Автор: {{news.author}}</p>
+                        <div class="form-group">
+                            <img class="rounded-circle account-img" src="/media/{{ news.img_author }}" style="cursor: pointer;width: 100px;height: 100px;" alt="">
+                        </div>
+                        <p></p>
                         <a href="{% url 'news:detail_news' news.pk %}" class="btn btn-lg btn-outline-success">Подробнее</a>
                     </div>
                 </div>
