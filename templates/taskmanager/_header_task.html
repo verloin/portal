@@ -5,7 +5,7 @@
 <nav class="navbar navbar-expand-lg" style="padding-left: 43px;">
     <a href="{% url 'taskmanager:tasks' %}">
         <div class="main-menu-logo">
-            <img class=".navbar-brand" style="height: 24px;width: auto;" src="https://planfix-avatar.storage.yandexcloud.net/leads/logo.svg?response-content-type=image%2Fsvg%2Bxml&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IgwJfusuzEZ6c_gpDGgf%2F20220420%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20220420T115621Z&X-Amz-SignedHeaders=host&X-Amz-Expires=43359&X-Amz-Signature=016af648d5dab360c10f40fc2d56b1df18eff9d80316e9f13810338015a65c2e" alt="">
+            <img class=".navbar-brand" style="height: 24px;width: auto;" src="/media/logo.svg" alt="">
         </div>
     </a>
 
@@ -15,23 +15,23 @@
 
   <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'news:news' %}">Home</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="{% url 'taskmanager:tasks' %}">Задачи</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="#">Документы</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="#">Сотрудники</a>
       </li>
 
 
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <div class="nav-item active dropdown">
+      <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Меню
         </a>
@@ -44,8 +44,6 @@
         </div>
       </div>
       <input style="font-size: 12px;border-radius: 18px;" class="form-control mr-sm-2" type="search" placeholder="Найти" aria-label="Search">
-{#      <button style="font-size: 12px;"  class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}
-
     </form>
   </div>
 </nav>

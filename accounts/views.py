@@ -20,10 +20,6 @@ class SignUpView(CreateView):
     template_name = 'registration/signup.html'
 
 
-class EmployeeForm:
-    pass
-
-
 @login_required
 def profile(request):
     if request.method == 'POST':
@@ -41,9 +37,6 @@ def profile(request):
     else:
         user_form = UpdateUserForm(instance=request.user)
         profile_form = UpdateProfileForm(instance=request.user.profile)
-
-    if "Reset" in request.POST:  # если пользователь собирается удалить одно дело
-        return render(request, 'profiles/profile.html')
 
     return render(request,
                   'profiles/profile.html', {
