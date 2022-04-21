@@ -1,4 +1,3 @@
-from django.template.defaulttags import url
 from django.urls import re_path
 
 from todolist.views import todo, category

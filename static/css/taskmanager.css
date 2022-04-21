@@ -1,0 +1,75 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #fdfdfd;
+    font-size: 14px;
+}
+
+*, p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+    color: #000;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar, .container-fluid {
+    background-color: #e8e8e8;
+    padding: 0.2rem;
+}
+
+.container-header {
+    display: flex;
+}
+
+.main-menu-logo {
+    margin-bottom: 8px;
+}
+
+.container-saidbar {
+    width: 11%;
+}
+
+.container-saidbar .navbar-brand {
+    margin: 3rem 1rem;
+}
+
+/*.container-saidbar .nav-item a {*/
+/*    color: rgba(0,0,0,1);*/
+/*}*/
+
+.container-main {
+    width: 89%;
+}
+
+
+@media (min-width: 768px) {
+  .navbar-container {
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    height: 100vh;
+  }
+  .navbar-container .navbar {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: 100%;
+  }
+  .navbar-container .navbar-collapse {
+    align-items: flex-start;
+  }
+  .navbar-container .nav {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .navbar-container .navbar-nav {
+    flex-direction: column !important;
+  }
+}

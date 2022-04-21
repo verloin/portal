@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'news',
     'accounts.apps.AccountsConfig',
     'todolist',
+    'taskmanager',
 ]
 
 MIDDLEWARE = [

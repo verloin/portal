@@ -10,10 +10,15 @@
             <div class="card m-4">
                 <div class="card-body">
                     <div class="post-entry">
-                        <h4 class="card-title"><p>{{ news.title }}</p></h4>
-                        <p style="font-style: italic;margin-bottom: 0;">Опубликовано: {{ news.publish|date:"d.m.Y H:i" }}</p>
-                        <p style="font-style: italic;">Автор: {{news.author}}</p>
+                        <h5 class="card-title"><p>{{ news.title }}</p></h5>
                         <p  class="card-text">{{ news.body }}</p>
+                        <div class="form-group" style="display: flex;margin-top: 1%;">
+                            <img class="rounded-circle account-img" src="/media/{{ news.img_author }}" style="cursor: pointer;width: 50px;height: 50px;" alt="">
+                            <div class="" style="margin-left: 2rem;">
+                                <p style="font-style: italic;margin-bottom: 0;">Опубликовано: {{ news.publish|date:"d.m.Y H:i" }}</p>
+                                <p style="font-style: italic;margin-bottom: 0;">Автор: {{news.author}}</p>
+                            </div>
+                        </div>
                         <a href="{% url 'news:edit_news' news.pk %}" class="btn float-sm-right btn-outline-success">Редактировать</a>
                     </div>
                 </div>
