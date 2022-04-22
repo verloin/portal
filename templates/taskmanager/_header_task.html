@@ -3,7 +3,7 @@
 
 
 <nav class="navbar navbar-expand-lg" style="padding-left: 43px;">
-    <a href="{% url 'taskmanager:tasks' %}">
+    <a href="{% url 'tasksmanager:list_tasks' %}">
         <div class="main-menu-logo">
             <img class=".navbar-brand" style="height: 24px;width: auto;" src="/media/logo.svg" alt="">
         </div>
@@ -19,7 +19,7 @@
         <a class="nav-link" href="{% url 'news:news' %}">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'taskmanager:tasks' %}">Задачи</a>
+        <a class="nav-link" href="{% url 'tasksmanager:list_tasks' %}">Задачи</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Документы</a>

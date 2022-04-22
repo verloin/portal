@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'news',
     'accounts.apps.AccountsConfig',
     'todolist',
-    'taskmanager',
+    'tasksmanager',
 ]
 
 MIDDLEWARE = [
@@ -147,6 +147,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'index'
-
+LOGOUT_REDIRECT_URL = 'index'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

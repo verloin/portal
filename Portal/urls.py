@@ -11,7 +11,7 @@ urlpatterns = [
     path('news/', include('news.urls')),
     path('accounts/', include('accounts.urls')),
     path('todo/', include('todolist.urls')),
-    path('task/', include('taskmanager.urls')),
+    path('task/', include('tasksmanager.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

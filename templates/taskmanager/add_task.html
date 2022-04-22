@@ -1,0 +1,70 @@
+{#{% extends 'taskmanager/_base_task.html' %}#}
+
+{% load static %}
+
+
+{% block add_task %}
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Add new task</h3><br>
+            <form method="POST" class="">
+                <input type="hidden" name="csrfmiddlewaretoken" value="kdPqS5CotUcETiaEzUUtRxkLq82M9nMhkkglnmnhojPIzBFhd8EOZxzMfPR9JaDK">
+
+                <div id="div_id_status" class="form-group">
+                    <label for="id_status" class=" requiredField">
+                        Status<span class="asteriskField">*</span>
+                    </label>
+                    <div>
+                        <select name="status" class="select form-control" required="" id="id_status">
+                            <option value="{{ task.status }}" selected="">{{ task.status }}</option>
+                        </select>
+                    </div>
+                    {{ task.status }}
+                </div>
+
+                <div id="div_id_title" class="form-group">
+                    <label for="id_title" class=" requiredField">
+                        Title
+                        <span class="asteriskField">*</span>
+                    </label>
+                    <div>
+                        <input type="text" name="title" maxlength="200" class="textinput textInput form-control" required="" id="id_title">
+                    </div>
+                </div>
+
+                <div id="div_id_author" class="form-group">
+                    <label for="id_author" class=" requiredField">
+                        Author<span class="asteriskField">*</span>
+                    </label>
+                    <div>
+                        <select name="author" class="select form-control" required="" id="id_author">
+                            <option value="" selected="">---------</option>
+                            <option value="1">admin</option>
+                            ...
+                        </select>
+                    </div>
+                </div>
+                <div id="div_id_executor" class="form-group">
+                    <label for="id_executor" class=" requiredField">
+                        Executor<span class="asteriskField">*</span>
+                    </label>
+                    <div>
+                        <select name="executor" class="select form-control" required="" id="id_executor">
+                            <option value="" selected="">---------</option>
+                            <option value="1">admin</option>
+                            ...
+                        </select>
+                    </div>
+                </div>
+                <div id="div_id_body" class="form-group">
+                    <label for="id_body" class="">Description</label>
+                    <div>
+                        <textarea name="body" cols="40" rows="10" class="textarea form-control" id="id_body"></textarea>
+                    </div>
+                </div>
+{#                <button type="submit" class="save btn btn-lg btn-outline-success">Save</button>#}
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
