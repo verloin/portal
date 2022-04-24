@@ -16,24 +16,19 @@
       <li class="nav-item">
         <a class="nav-link" href="#">About</a>
       </li>
-      <li class="nav-item mt-4">
-          {% if user.is_authenticated %}
-              <a href="{% url 'accounts:users-profile' %}" class="nav-link">Profile: {{user.username}}</a>
-              <br>
-              <div class="">
-                  <img class="rounded-circle account-img" src="{{ user.profile.avatar.url }} " style="cursor: pointer;width: 100px;height: 100px;" alt=""/>
-              </div>
-          {% endif %}
-      </li>
-        {% if user.is_authenticated %}
-            <li class="nav-item mt-4">
-                <a href="{% url 'accounts:logout' %}" class="btn btn-outline-success my-2 my-sm-0">Log out</a>
-            </li>
-        {% else %}
-            <li class="nav-item mt-4">
-                <a href="{% url 'accounts:login' %}" class="btn btn-outline-success my-2 my-sm-0">Login</a>
-            </li>
-        {% endif %}
+                  <li class="nav-item" style="margin-top: 150px;">
+                      {% if user.is_authenticated %}
+                          <div class="" style="text-align: center;">
+                              <img class="rounded-circle account-img" src="{{ user.profile.avatar.url }} " style="cursor: pointer;width: 100px;height: 100px;" alt=""/>
+                              <a href="{% url 'accounts:users-profile' %}" class="nav-link">{{user.username}}</a>
+                              <a href="{% url 'accounts:logout' %}" class="btn btn-outline-success my-2 my-sm-0">Log out</a>
+                          </div>
+                      {% else %}
+                          <div class="" style="text-align: center;">
+                            <a href="{% url 'accounts:login' %}" class="btn btn-outline-success my-2 my-sm-0">Login</a>
+                          </div>
+                      {% endif %}
+                  </li>
 
     </ul>
 

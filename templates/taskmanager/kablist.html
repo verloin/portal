@@ -1,0 +1,51 @@
+{#{% block kablist %}#}
+{##}
+{#    {% for users in users_list %}#}
+{#        <p>#}
+{#            {{ users.username }}#}
+{#        </p>#}
+{#    {% endfor %}#}
+{##}
+{#{% endblock kablist %}#}
+
+
+
+
+<div id="div_id_author" class="form-group">
+    <label for="id_author" class=" requiredField">
+        Author<span class="asteriskField">*</span>
+    </label>
+    <div>
+        <select name="author" class="select form-control" required="" id="id_author">
+            <option value="" selected="">---------</option>
+            <option value="">admin</option>
+            {% for users in users_list %}
+                <option value="users">{{ users.username }}</option>
+            {% endfor %}
+
+        </select>
+    </div>
+</div>
+
+<div id="div_id_status" class="form-group">
+    <label for="id_status" class=" requiredField">
+        Status<span class="asteriskField">*</span>
+    </label>
+    <div>
+        <select name="status" class="select form-control" required="" id="id_status">
+            <option value="" selected="">---------</option>
+            <option value="">status</option>
+            {% for user in status_list %}
+                <option value="user">{{ user.1 }}</option>
+            {% endfor %}
+
+        </select>
+    </div>
+</div>
+
+{#<div class="">#}
+{#    {{ status_list }}#}
+{#    {% for user in status_list %}#}
+{#        {{ user.1 }}#}
+{#    {% endfor %}#}
+{#</div>#}
