@@ -1,6 +1,4 @@
-/var/www/portal/manage.py makemigrations
-/var/www/portal/manage.py migrate
-echo "MIGRATIONS sucessfully done"
+#!/usr/bin/bash
 copy /var/www/portal/configs/gunicorn.socket /etc/systemd/system/
 copy /var/www/portal/configs/gunicorn.service /etc/systemd/system/
 sudo systemctl start gunicorn.socket
