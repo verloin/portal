@@ -15,6 +15,7 @@ run:
     - rsync -av --no-perms --no-owner --no-group --exclude ".git*" $CI_PROJECT_DIR/ /var/www/portal
     - echo "APPLICATIONS sucessfully copied"
     - pip3 install -r requirements.txt
+    - sudo apt install python-pil
     - echo "REQUIREMENTS sucessfully installed"
     - /var/www/portal/manage.py makemigrations
     - /var/www/portal/manage.py migrate
