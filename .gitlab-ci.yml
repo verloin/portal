@@ -13,7 +13,9 @@ run:
   script:
     - echo "Deploying application"
     - rsync -av --no-perms --no-owner --no-group --exclude ".git*" $CI_PROJECT_DIR/ /var/www/portal
-    - echo "APPLICATIONS sucessfully deployed"
+    - echo "APPLICATIONS sucessfully copied"
+    - pip3 install --requirements {{requirements.txt}}
+    - echo "REQUIREMENTS sucessfully installed"
     - /var/www/portal/manage.py makemigrations
     - /var/www/portal/manage.py migrate
     - echo "MIGRATIONS sucessfully done"
