@@ -2,11 +2,9 @@ stages:
   - test
   - deploy
 
-
 test:
   stage: test
   script: echo $CI_PROJECT_DIR/
-
 
 run:
   stage: deploy
