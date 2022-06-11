@@ -10,5 +10,6 @@ run:
   stage: deploy
   script:
     - echo "Deploying application"
+    - mkdir -p /var/www/portal
     - rsync -av --no-perms --no-owner --no-group --exclude ".git*" $CI_PROJECT_DIR/ /var/www/portal
     - echo "APPLICATIONS sucessfully copied"
