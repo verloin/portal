@@ -20,11 +20,11 @@ RUN pip install -r requirements.txt
 # copy project
 COPY . .
 
-#RUN sed -i 's/\r$//g' ./entrypoint.sh
-#RUN chmod +x ./entrypoint.sh
-#
-## run entrypoint.sh
-#ENTRYPOINT ["./entrypoint.sh"]
+RUN sed -i 's/\r$//g' ./entrypoint.sh
+RUN chmod +x ./entrypoint.sh
+
+# run entrypoint.sh
+ENTRYPOINT ["./entrypoint.sh"]
 
 
 
