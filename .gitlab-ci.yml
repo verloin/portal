@@ -1,8 +1,11 @@
 stages:
+    - copy
     - build
 
 
-before_script:
+copy:
+    stage: copy
+    script:
     # копирование данных проекта
     - echo "APPLICATIONS start copy"
     - mkdir -p /usr/src/app
