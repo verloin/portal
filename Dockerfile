@@ -2,7 +2,7 @@
 FROM python:3.9.6-alpine
 
 # create and set work directory
-WORKDIR /usr/src/app
+WORKDIR /var/www/portal
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
