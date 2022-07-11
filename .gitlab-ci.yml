@@ -7,8 +7,8 @@ test:
     stage: test
     script:
     - echo "APPLICATIONS test"
-#    - rsync -av --no-perms --no-owner --no-group --exclude ".git*" $CI_PROJECT_DIR/ /var/www/portal
-#    - echo "APPLICATIONS sucessfully copied"
+    - rsync -av --no-perms --no-owner --no-group --exclude ".git*" $CI_PROJECT_DIR/ /var/www/portal
+    - echo "APPLICATIONS sucessfully copied"
 
 
 # Сборка Docker-образа
