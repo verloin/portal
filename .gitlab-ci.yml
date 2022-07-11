@@ -1,15 +1,14 @@
 stages:
-    - copy
+    - test
     - build
 
 
-copy:
-    stage: copy
+test:
+    stage: test
     script:
-    # копирование данных проекта
-    - echo "APPLICATIONS start copy"
-    - rsync -av --no-perms --no-owner --no-group --exclude ".git*" $CI_PROJECT_DIR/ /var/www/portal
-    - echo "APPLICATIONS sucessfully copied"
+    - echo "APPLICATIONS test"
+#    - rsync -av --no-perms --no-owner --no-group --exclude ".git*" $CI_PROJECT_DIR/ /var/www/portal
+#    - echo "APPLICATIONS sucessfully copied"
 
 
 # Сборка Docker-образа
