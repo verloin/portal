@@ -2,10 +2,10 @@ version: '2'
 
 services:
   web:
-    build: ./portal
+    build: /var/www/portal
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./portal:/var/www/portal
+      - /var/www/portal:/var/www/portal
     ports:
       - 8000:8000
     env_file:
