@@ -8,7 +8,6 @@ copy:
     script:
     # копирование данных проекта
     - echo "APPLICATIONS start copy"
-    - mkdir -p /var/www/portal
     - rsync -av --no-perms --no-owner --no-group --exclude ".git*" $CI_PROJECT_DIR/ /var/www/portal
     - echo "APPLICATIONS sucessfully copied"
 
