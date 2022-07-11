@@ -1,15 +1,21 @@
 stages:
-  - test
-  - deploy
+    - build
 
-test:
-  stage: test
-  script: echo $CI_PROJECT_DIR/
 
-run:
-  stage: deploy
-  script:
-    - echo "Deploying application"
-    - mkdir -p /var/www/portal
-    - rsync -av --no-perms --no-owner --no-group --exclude ".git*" $CI_PROJECT_DIR/ /var/www/portal
+before_script:
+    # копирование данных проекта
+    - echo "APPLICATIONS start copy"
+    - mkdir -p /usr/src/app
+    - rsync -av --no-perms --no-owner --no-group --exclude ".git*" $CI_PROJECT_DIR/ /usr/src/app
     - echo "APPLICATIONS sucessfully copied"
+
+
+# Сборка Docker-образа
+build:
+    stage: build
+    script:
+        # собственно сборка и запуск проекта
+        - docker-compose build
+        - docker-compose up -d
+
+
