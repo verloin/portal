@@ -1,11 +1,11 @@
-version: '3.8'
+version: '2'
 
 services:
   web:
-    build: /var/www/portal
+    build: ./portal
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - /var/www/portal:/var/www/portal
+      - ./portal:/var/www/portal
     ports:
       - 8000:8000
     env_file:
