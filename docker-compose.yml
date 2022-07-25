@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    build: /var/www/portal
+    build: .
     command: gunicorn Portal.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/var/www/portal/static
